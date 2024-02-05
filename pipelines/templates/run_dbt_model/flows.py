@@ -17,7 +17,7 @@ from pipelines.constants import constants
 
 templates__run_dbt_model_smac__flow = deepcopy(templates__run_dbt_model__flow)
 templates__run_dbt_model_smac__flow.state_handlers = [handler_inject_bd_credentials]
-
+templates__run_dbt_model_smac__flow.name = "[TEMPLATE] Executar modelo DBT - SMAC"
 templates__run_dbt_model_smac__flow.storage = GCS(constants.GCS_FLOWS_BUCKET.value)
 templates__run_dbt_model_smac__flow.run_config = KubernetesRun(
     image=constants.DOCKER_IMAGE.value,
