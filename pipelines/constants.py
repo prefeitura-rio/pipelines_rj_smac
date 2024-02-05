@@ -12,7 +12,7 @@ class constants(Enum):
     DOCKER_IMAGE_NAME = "AUTO_REPLACE_DOCKER_IMAGE"
     DOCKER_IMAGE = f"{DOCKER_IMAGE_NAME}:{DOCKER_TAG}"
     GCS_FLOWS_BUCKET = "datario-public"
-    RJ_SMAC_AGENT_LABEL = "smac"
+    RJ_SMAC_AGENT_LABEL = "rj-smac"
     ######################################
     # Agent labels
     ######################################
@@ -22,4 +22,3 @@ class constants(Enum):
     # Other constants
     ######################################
     # EXAMPLE_CONSTANT = "example_constant"
-
