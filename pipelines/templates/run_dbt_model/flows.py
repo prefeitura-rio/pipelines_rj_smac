@@ -15,11 +15,11 @@ from prefeitura_rio.pipelines_utils.state_handlers import handler_inject_bd_cred
 
 from pipelines.constants import constants
 
-templates__run_dbt_model_sme__flow = deepcopy(templates__run_dbt_model__flow)
-templates__run_dbt_model_sme__flow.state_handlers = [handler_inject_bd_credentials]
+templates__run_dbt_model_smac__flow = deepcopy(templates__run_dbt_model__flow)
+templates__run_dbt_model_smac__flow.state_handlers = [handler_inject_bd_credentials]
 
-templates__run_dbt_model_sme__flow.storage = GCS(constants.GCS_FLOWS_BUCKET.value)
-templates__run_dbt_model_sme__flow.run_config = KubernetesRun(
+templates__run_dbt_model_smac__flow.storage = GCS(constants.GCS_FLOWS_BUCKET.value)
+templates__run_dbt_model_smac__flow.run_config = KubernetesRun(
     image=constants.DOCKER_IMAGE.value,
     labels=[
         constants.RJ_SMAC_AGENT_LABEL.value,
@@ -30,7 +30,7 @@ templates_run_dbt_model_sme_default_parameters = {
     "dataset_id": "dataset_id",
     "table_id": "table_id",
 }
-templates__run_dbt_model_sme__flow = set_default_parameters(
-    templates__run_dbt_model_sme__flow,
+templates__run_dbt_model_smac__flow = set_default_parameters(
+    templates__run_dbt_model_smac__flow,
     default_parameters=templates_run_dbt_model_sme_default_parameters,
 )
