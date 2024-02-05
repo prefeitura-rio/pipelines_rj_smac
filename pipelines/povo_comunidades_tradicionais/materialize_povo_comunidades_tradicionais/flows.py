@@ -18,7 +18,7 @@ from pipelines.povo_comunidades_tradicionais.materialize_povo_comunidades_tradic
 
 materialize_povo_comunidades_tradicionais_flow = deepcopy(templates__run_dbt_model__flow)
 materialize_povo_comunidades_tradicionais_flow.name = (
-    "SMAC: povo_comunidades_tradicionais - Materializar tabelas"
+    "SMAC: povo_comunidades_tradicionais - Materializar tabelas."
 )
 materialize_povo_comunidades_tradicionais_flow.storage = GCS(constants.GCS_FLOWS_BUCKET.value)
 materialize_povo_comunidades_tradicionais_flow.run_config = KubernetesRun(
