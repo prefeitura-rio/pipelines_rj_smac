@@ -22,4 +22,3 @@ class constants(Enum):
     # Other constants
     ######################################
     # EXAMPLE_CONSTANT = "example_constant"
-
