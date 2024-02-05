@@ -15,11 +15,14 @@ from pipelines.constants import constants
 from pipelines.povo_comunidades_tradicionais.materialize_povo_comunidades_tradicionais.schedules import (
     materialize_povo_comunidades_tradicionais_schedule,
 )
+from prefeitura_rio.pipelines_utils.state_handlers import handler_inject_bd_credentials
 
 materialize_povo_comunidades_tradicionais_flow = deepcopy(templates__run_dbt_model__flow)
-materialize_povo_comunidades_tradicionais_flow.name = (
-    "SMAC: povo_comunidades_tradicionais - testandonome"
-)
+materialize_povo_comunidades_tradicionais_flow.state_handlers = [handler_inject_bd_credentials]
+#materialize_povo_comunidades_tradicionais_flow.name = (
+#    "SMAC: povo_comunidades_tradicionais - testandonome"
+#)
+
 materialize_povo_comunidades_tradicionais_flow.storage = GCS(constants.GCS_FLOWS_BUCKET.value)
 materialize_povo_comunidades_tradicionais_flow.run_config = KubernetesRun(
     image=constants.DOCKER_IMAGE.value,
