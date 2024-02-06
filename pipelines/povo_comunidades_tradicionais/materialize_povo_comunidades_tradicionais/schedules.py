@@ -29,7 +29,7 @@ diariamente = [
         "table_id": "visita_valongo",
         "mode": "prod",
     },
-        {
+    {
         "dataset_id": "investimento_valongo",
         "table_id": "investimento_valongo",
         "mode": "prod",
