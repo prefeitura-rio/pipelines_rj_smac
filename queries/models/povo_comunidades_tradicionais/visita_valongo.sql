@@ -1,6 +1,6 @@
 {{ config(alias='visita_valongo') }}
 
-SELECT 
+SELECT
     DATE(periodo) AS ano_mes,
     SAFECAST(ano AS INT64) AS ano,
     CAST(mes AS STRING) AS mes,
