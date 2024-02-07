@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     DATETIME(periodo, "America/Sao_Paulo") AS ano_mes,
     SAFECAST(ano AS INT64) AS ano,
     CAST(mes AS STRING) AS mes,

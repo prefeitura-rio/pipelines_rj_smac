@@ -1,6 +1,6 @@
 {{ config(alias='investimento_valongo') }}
 
-SELECT 
+SELECT
     CAST(nome_org AS STRING) AS nome_org,
     CAST(v__nculo_institucional AS STRING) AS vinculo_institucional,
     CAST(natureza_inv AS STRING) AS natureza_inv,
