@@ -24,3 +24,12 @@ models:
     example:
       +materialized: view
       +schema: example
+    investimento_valongo:
+      +materialized: table
+      +schema: investimento_valongo
+    povo_comunidades_tradicionais:
+      +materialized: table
+      +schema: povo_comunidades_tradicionais
+    povo_comunidades_tradicionais_indepit:
+      +materialized: table
+      +schema: povo_comunidades_tradicionais_indepit
