@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     PARSE_DATE('%Y%m', CAST(periodo AS STRING)) as ano_mes,
     CAST(ano AS INT64) as ano,
     CAST(mes AS STRING) as mes,

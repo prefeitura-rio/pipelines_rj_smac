@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     DATETIME(Carimbo_de_data_hora, "America/Sao_Paulo") as data_hora,
     CAST(Tipo_da_comunidade_tradicional_que_faz_parte AS STRING) as tipo_comunidade,
     CAST(Exist__ncia_de_vias_de_acesso_que_conectam_a_comunidade_com_o_tecido_urbano__ AS STRING) as existencia_vias_acesso,
@@ -23,21 +23,21 @@ SELECT
     CAST(Qual_a_faixa_de_renda_predominante_em_sua_comunidade_ AS STRING) as faixa_renda_predominante,
     CAST(Qual____a_faixa_de_escolariza____o_formal_predominante_em_sua_comunidade__ AS STRING) as escolaridade_predominante,
     CAST(Qual_o_percentual_aproximado_de_pessoas_de_toda_a_comunidade_que_recebem_benef__cios_sociais_do_governo_federal___Bolsa_Fam__lia__por_exemplo_ AS STRING)  as percentual_bolsa_familia,
-    CAST(Qual_o_percentual_aproximado_de_pessoas_de_toda_a_comunidade_que_recebem_benef__cios_sociais_do_governo_municipal___Prato_Feito_Carioca__por_exemplo_ AS STRING) as percentual_prato_feito_carioca,				
+    CAST(Qual_o_percentual_aproximado_de_pessoas_de_toda_a_comunidade_que_recebem_benef__cios_sociais_do_governo_municipal___Prato_Feito_Carioca__por_exemplo_ AS STRING) as percentual_prato_feito_carioca,
     CAST(Qual_o_percentual_aproximado_de_pessoas_de_toda_a_comunidade_que_est__o_em_situa____o_de_inseguran__a_alimentar__ AS STRING) as percentual_inseguranca_alimentar,
     CAST(Como_voc___considera_o_acesso_aos_servi__os_de_sa__de_p__blica_para_a_sua_comunidade___Cl__nicas_da_fam__lia__UPAs__hospitais__centros_de_vacina____o__dentre_outros_equipamentos__ AS STRING) as saude_publica,
     CAST(Como_voc___considera_o_acesso_aos_servi__os_de_educa____o_p__blica_para_a_sua_comunidade___Escolas_b__sicas__escolas_t__cnicas__universidades__ AS STRING) as educacao_publica,
-    CAST(Como_voc___considera_o_acesso_aos_servi__os_de_cultura_para_a_sua_comunidade___teatros_p__blicos_e_privados__cinemas__espa__os_culturais_p__blicos_e_privados__dentre_outros__ AS STRING) as servicos_culturais, 				
+    CAST(Como_voc___considera_o_acesso_aos_servi__os_de_cultura_para_a_sua_comunidade___teatros_p__blicos_e_privados__cinemas__espa__os_culturais_p__blicos_e_privados__dentre_outros__ AS STRING) as servicos_culturais,
     CAST(A_sua_comunidade_j___promoveu_a____es_culturais_ AS STRING) as atividades_culturais_comunidade,
-    CAST(A_sua_comunidade_j___foi_contemplada_com_algum_edital_de_fomento____cultura_federal__estadual_ou_municipal__ AS STRING) as fomento_cultural, 				
+    CAST(A_sua_comunidade_j___foi_contemplada_com_algum_edital_de_fomento____cultura_federal__estadual_ou_municipal__ AS STRING) as fomento_cultural,
     CAST(O_territ__rio_da_sua_comunidade_j___sofreu_ataques_discriminat__rios__ AS STRING) as ataques_discriminatorios,
     CAST(As_pessoas_da_sua_comunidade_j___sofreram_ataques_discriminat__rios_verbais_ AS STRING) as ataques_discriminatorios_verbais,
     CAST(As_pessoas_da_sua_comunidade_j___sofreram_ataques_discriminat__rios_f__sicos_ AS STRING) as ataques_discriminatorios_fisicos,
     CAST(Como_voc___considera_as_condi____es_de_seguran__a_p__blica_para_as_pr__ticas_da_comunidade_ AS STRING) as seguranca_publica,
-    CAST(Qual_o_percentual_aproximado_de_pessoas_de_toda_a_comunidade_que_possuem_a_documenta____o_b__sica_do_cidad__o__como_RG__CPF_e_certid__es_ AS STRING) as percentual_possui_documentos, 				
+    CAST(Qual_o_percentual_aproximado_de_pessoas_de_toda_a_comunidade_que_possuem_a_documenta____o_b__sica_do_cidad__o__como_RG__CPF_e_certid__es_ AS STRING) as percentual_possui_documentos,
     CAST(Nos___ltimos_10_anos__a_comunidade_sofreu_com_eventos_clim__ticos_extremos__como_enchentes__tempestades_severas_e_secas_prolongadas_ AS STRING) as eventos_climaticos,
     CAST(Quantos_s__o_os_pontos_sens__veis_aos_eventos_clim__ticos_extremos_no_territ__rio_da_comunidade_ AS STRING) as pontos_sensiveis_eventos_climaticos,
-    CAST(Quantas_a____es_de_preven____o_aos_eventos_clim__ticos_extremos_foram_realizadas_pelo_poder_p__blico_municipal__estadual_ou_federal_no_territ__rio_da_comunidade__nos___ltimos_10_anos_ AS STRING) as prevencao_eventos_climaticos, 				
+    CAST(Quantas_a____es_de_preven____o_aos_eventos_clim__ticos_extremos_foram_realizadas_pelo_poder_p__blico_municipal__estadual_ou_federal_no_territ__rio_da_comunidade__nos___ltimos_10_anos_ AS STRING) as prevencao_eventos_climaticos,
     CAST(Como_voc___classifica_o_risco_ambiental_do_territ__rio_da_comunidade__Considere_aqui_fatores_como_o_risco_de_enchentes__deslizamentos_de_terra__queda_de___rvores__dentre_outros_ AS STRING) as risco_ambiental,
     CAST(A_sua_comunidade_possui_uma_associa____o_formalizada__com_CNPJ__que_a_represente__ AS STRING) as possui_cnpj,
     CAST(A_sua_comunidade_possui_um_ou_mais_coletivos_que_se_organizam_em_torno_de_temas__pautas_e_a____es_ AS STRING) as coletivos_sociais,
@@ -56,10 +56,10 @@ SELECT
     t2.nome as bairro,
     t2.subprefeitura,
     ST_GEOGPOINT(longitude, latitude) as geometry
-    
+
 FROM `rj-smac.povo_comunidades_tradicionais_indepit_staging.indepit` t1
     LEFT JOIN `datario.dados_mestres.bairro` t2
     ON ST_INTERSECTS(
-        ST_GEOGPOINT(t1.longitude, t1.latitude), 
-        t2.geometry  
+        ST_GEOGPOINT(t1.longitude, t1.latitude),
+        t2.geometry
     )
